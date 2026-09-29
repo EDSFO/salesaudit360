@@ -13,8 +13,14 @@ const { d1, r2 } = hostingConfig;
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === 'seatbelt';
 
 const localBindingConfig = {
+  name: 'salesaudit360',
+  compatibility_date: '2026-05-15',
   main: 'vinext/server/fetch-handler',
   compatibility_flags: ['nodejs_compat'],
+  routes: [
+    { pattern: 'salesaudit360.com', custom_domain: true },
+    { pattern: 'www.salesaudit360.com', custom_domain: true },
+  ],
   d1_databases: d1
     ? [
         {
